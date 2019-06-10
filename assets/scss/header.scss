@@ -1,0 +1,103 @@
+.header-wrap{
+    position: fixed;
+    top: 0;
+    z-index: 10000;
+    width: 100%;
+    min-width: 1210px;
+    height: 80px;
+    transition: all 0.8s linear;
+    background: rgba(255,255,255,1);
+    box-shadow:0 0 5px rgba(0,0,0,0.3);
+    &:hover{
+        box-shadow:0 0 5px rgba(0,0,0,0.3);
+        // background: rgba(255,255,255,1);
+        header .menu-nav ul li a{
+            color: #333;
+        }
+    }
+    header{
+        height: 100%;
+        position: relative;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        .menu-logo{
+        }
+        .menu-nav{
+            height: 100%;
+            position: absolute;
+            top: 0;
+            right: 0px;
+            ul{
+                display: flex;
+                align-items: center;
+                li{
+                    list-style: none;
+                    position: relative;
+                    a{
+                        display: block;
+                        height: 80px;
+                        font-size: 16px;
+                        color: #333;
+                        padding: 0 20px;
+                        line-height: 80px;
+                        text-decoration: none;
+                        &:hover{
+                            color: #00c1de;
+                        }
+                    }
+                    .show-nav{
+                        background: rgba(255,255,255,0.8);
+                        right: -55px;
+                        position: absolute;
+                        width: 150px;
+                        border-radius: 3px;
+                        overflow: hidden;
+                        top: 80px;
+                        padding-bottom: 20px;
+                        transition: all 0.8s 0.1s;
+                        a{
+                            line-height: 45px;
+                            height: auto;
+                            font-size: 14px;
+                        }
+                    }
+                    .on{
+                            color: #00c1de;
+                    }
+                }
+            }
+        }
+    }
+}
+.fade-enter-active, .fade-leave-active {
+    transition: opacity .5s;
+}
+.fade-enter, .fade-leave-active {
+    opacity: 0;
+}
+/* logo发光动画 */
+
+@keyframes searchLights
+{
+from {left: -365px;}
+to {left: 180px;}
+}
+
+@-moz-keyframes searchLights /* Firefox */
+{
+    from {left: -365px;}
+    to {left: 180px;}
+}
+
+@-webkit-keyframes searchLights /* Safari 和 Chrome */
+{
+    from {left: -365px;}
+    to {left: 180px;}
+}
+
+@-o-keyframes searchLights /* Opera */
+{
+    from {left: -365px;}
+    to {left: 180px;}
+}

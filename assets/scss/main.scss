@@ -1,0 +1,734 @@
+
+
+//全局页面过渡动画
+.page-enter-active, .page-leave-active {
+  transition: opacity .2s;
+}
+.page-enter, .page-leave-active {
+  opacity: 0;
+}
+
+
+
+
+//el-table
+.el-table{
+  thead{
+    tr{
+      th{
+        background-color: #EBEBEB;
+        color: #333;
+        font-weight: normal;
+      }
+    }
+  }
+  tbody{
+    tr{
+      td{
+        color: #333;
+        padding: 10px 0;
+      }
+    }
+  }
+}
+
+//user-defined-table 非多选框有间隙table
+.user-defined-table{
+  .el-table{
+    &:before {
+      display: none;
+    }
+    thead{
+      tr {
+        th{
+          padding: 6px 0;
+          font-size: 16px;
+          font-weight: 500;
+          &:first-child .cell {
+            padding-left: 15px;
+          }
+          .cell{
+            padding: 0;
+          }
+        }
+      }
+    }
+    tbody {
+      tr{
+        &:first-child td{
+          padding-top: 10px;
+        }
+        td{
+          border: none;
+          padding: 5px 0;
+          .cell{
+            border: 1px solid #dedede;
+            padding: 0;
+            .table-inner{
+              width: 100%;
+            }
+            .body-head{
+              width: 100%;
+              height: 40px;
+              line-height: 40px;
+              border-bottom: 1px dashed #dedede;
+              padding-left: 15px;
+              color: #999;
+            }
+            .body-content{
+              width: 100%;
+              min-height: 88px;
+              padding-left: 15px;
+              display: flex;
+              &>div{
+                min-height: 88px;
+                padding-right: 10px;
+                &:not(:first-child){
+                  padding-top: 25px;
+                  padding-bottom: 20px;
+                }
+              }
+              .product-name{
+                display: flex;
+                img{
+                  width: 60px;
+                  height: 60px;
+                  display: inline-block;
+                  background-color: #dedede;
+                  margin-top: 15px;
+                }
+                &>span{
+                  padding-left: 15px;
+                  padding-top: 25px;
+                  display: inline-block;
+                }
+              }
+            }
+            .body-footer{
+              width: 100%;
+              padding: 0 15px;
+              height: 45px;
+              line-height: 45px;
+              border-top: 1px solid #dedede;
+              display: flex;
+              p{
+                span{
+                  &:not(:first-child){
+                    padding-left: 40px;
+                  }
+                }
+              }
+            }
+
+            .product-name{
+              width: 235px;
+            }
+            .product-name250{
+              width: 250px;
+            }
+            .product-type{
+              width: 140px;
+            }
+            .product-logisticsMode{
+              width: 160px;
+            }
+            .product-weight{
+              width: 120px;
+            }
+            .product-estimateShippingFee{
+              width: 250px;
+            }
+            .product-tockNumber{
+              width: 165px;
+            }
+            .product-reason{
+              width: 150px;
+            }
+            .product-quantity{
+              width: 130px;
+            }
+            .product-notes{
+              width: 300px;
+            }
+            .produc-operation{
+              width: 100px;
+              p{
+                display: flex;
+                cursor: pointer;
+                i{
+                  font-weight: bold;
+                }
+                span{
+                  line-height: 14px;
+                  padding-left: 5px;
+                }
+              }
+              .operation-add{
+                i{
+                  color: #009dd9;
+                }
+                &:hover{
+                  color: #009dd9;
+                }
+              }
+              .operation-del{
+                i{
+                  color: #ef1f1f;
+                }
+                &:hover{
+                  color: #ef1f1f;
+                }
+              }
+            }
+
+            &>div{
+              &:last-child{
+                flex: 1;
+              }
+            }
+          }
+        }
+        &:hover {
+          td{
+            background-color: #fff;
+            .cell{
+              background-color: #f5f7fa;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+// 多选框有间隙table
+.user-defined-table2{
+  .el-table{
+    &:before {
+      display: none;
+    }
+    thead{
+      tr {
+        th{
+          padding: 6px 0;
+          font-size: 16px;
+          font-weight: 500;
+          &:first-child .cell {
+            text-align: center;
+          }
+          .cell{
+            padding: 0;
+          }
+        }
+      }
+    }
+    tbody {
+      tr{
+        &:first-child td{
+          padding-top: 10px;
+        }
+        td{
+          border: none;
+          padding: 5px 0;
+          &:first-child .cell {
+            border-left: 1px solid #dedede;
+            height: 187px;
+            position: relative;
+            text-align: center;
+            .el-checkbox{
+              height: 40px;
+              border-bottom: 1px dashed #dedede;
+              padding-top: 9px;
+            }
+            &::after{
+              content: '';
+              width: 30px;
+              height: 1px;
+              background-color: #dedede;
+              position: absolute;
+              bottom: 44px;
+              left: 0;
+            }
+          }
+          &:last-child .cell{
+            border-right: 1px solid #d1d1d1;
+          }
+          .cell{
+            border-top: 1px solid #d1d1d1;
+            border-bottom: 1px solid #d1d1d1;
+            padding: 0;
+            .body-head{
+              height: 40px;
+              line-height: 40px;
+              border-bottom: 1px dashed #dedede;
+              color: #999;
+            }
+            .body-content{
+              width: 100%;
+              height: 100px;
+              display: flex;
+              &>div{
+                min-height: 88px;
+                padding-right: 10px;
+                &:not(:first-child){
+                  padding-top: 25px;
+                  padding-bottom: 20px;
+                }
+                &:last-child{
+                  flex: 1;
+                }
+                p{
+                  margin: 0;
+                  line-height: 18px;
+                }
+              }
+              .product-name{
+                display: flex;
+                img{
+                  width: 60px;
+                  height: 60px;
+                  display: inline-block;
+                  background-color: #dedede;
+                  margin-top: 15px;
+                }
+                &>span{
+                  padding-left: 15px;
+                  padding-top: 25px;
+                  display: inline-block;
+                }
+              }
+            }
+            .body-footer{
+              width: 100%;
+              height: 45px;
+              line-height: 45px;
+              border-top: 1px solid #dedede;
+              display: flex;
+              p{
+                span{
+                  &:not(:first-child){
+                    padding-left: 40px;
+                  }
+                }
+              }
+            }
+
+            .product-name{
+              width: 250px;
+            }
+            .product-name250{
+              width: 250px;
+            }
+            .product-type{
+              width: 140px;
+            }
+            .product-logisticsMode{
+              width: 160px;
+            }
+            .product-weight{
+              width: 120px;
+            }
+            .product-estimateShippingFee{
+              width: 250px;
+            }
+            .product-tockNumber{
+              width: 165px;
+            }
+            .product-reason{
+              width: 150px;
+            }
+            .product-quantity{
+              width: 130px;
+            }
+            .product-notes{
+              width: 300px;
+            }
+            .produc-operation{
+              width: 100px;
+              p{
+                display: flex;
+                cursor: pointer;
+                i{
+                  font-weight: bold;
+                }
+                span{
+                  line-height: 14px;
+                  padding-left: 5px;
+                }
+              }
+              .operation-add{
+                i{
+                  color: #009dd9;
+                }
+                &:hover{
+                  color: #009dd9;
+                }
+              }
+              .operation-del{
+                i{
+                  color: #ef1f1f;
+                }
+                &:hover{
+                  color: #ef1f1f;
+                }
+              }
+            }
+
+            &>div{
+              &:last-child{
+                flex: 1;
+              }
+            }
+          }
+        }
+        &:hover {
+          td{
+            background-color: #fff;
+            .cell{
+              background-color: #f5f7fa;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+// 自定义div模拟table
+.user-defined-table3{
+  width: 100%;
+  border: 1px solid #dedede;
+  margin-bottom: 10px;
+  &>div{
+    height: 36px;
+    padding-left: 15px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    span{
+      display: inline-block;
+    }
+  }
+  .item-title{
+    background-color: #ededed;
+    font-weight: bold;
+  }
+  .item-content{
+    &:hover{
+      background-color: #f5f7fa;
+    }
+  }
+  .table-body-item1{
+    span{
+      width: 20%;
+    }
+  }
+  .table-body-item2{
+    span{
+      width: 25%;
+    }
+  }
+}
+// elementtable修饰
+.user-defined-table4{
+  border: 1px solid #dedede;
+  margin-bottom: 10px;
+  border-bottom: 0;
+  .el-table{
+    td{
+      vertical-align: top;
+    }
+    .product-name{
+      display: flex;
+      img{
+        width: 60px;
+        height: 60px;
+        display: inline-block;
+        background-color: #dedede;
+      }
+      &>span{
+        padding-left: 15px;
+        display: inline-block;
+      }
+    }
+  }
+}
+
+
+//弹出框
+.v-modal{
+  opacity: 0.1;
+}
+.el-dialog{
+  box-shadow: 0px 0px 16px 0px 
+    rgba(0, 0, 0, 0.11);
+  .el-dialog__header{
+    .el-dialog__title{
+      width: 100%;
+      display: inline-block;
+      text-align: center;
+      font-weight: bold;
+      padding: 10px 0;
+    }
+    .el-dialog__headerbtn{
+      i{
+        color: #E63A29;
+        font-weight: bold;
+        font-size: 30px;
+      }
+    }
+  }
+  .el-dialog__body{
+    padding: 0 20px;
+  }
+  .el-dialog__footer{
+    .dialog-footer{
+      .el-button{
+        width: 120px;
+        height: 40px;
+        border-radius: 3px;
+        padding: 0;
+        font-size: 18px;
+        &:hover{
+          opacity: 0.8;
+        }
+      }
+      .el-button--primary{
+        background-color: #009dd9;
+      }
+      .el-button--default{
+        background-color: #e0e0e0;
+        color: #666;
+      }
+    }
+  }
+}
+.el-message-box__wrapper{
+  .el-message-box{
+    width: 620px;
+    padding-bottom: 40px;
+    .el-message-box__header{
+      border-bottom: 1px dashed #dedede;
+      .el-message-box__title{
+        text-align: center;
+        height: 40px;
+        font-weight: bold;
+        line-height: 40px;
+      }
+      .el-message-box__headerbtn{
+        i{
+          color: #E63A29;
+          font-weight: bold;
+          font-size: 30px;
+        }
+      }
+    }
+    .el-message-box__content{
+      padding: 30px 0;
+      text-align: center;
+    }
+    .el-message-box__btns{
+      text-align: center;
+      .el-button{
+        width: 120px;
+        height: 40px;
+        border-radius: 3px;
+        padding: 0;
+        font-size: 18px;
+        &:hover{
+          opacity: 0.8;
+        }
+      }
+      .el-button--default{
+        background-color: #e0e0e0;
+        color: #666;
+      }
+      .el-button--primary{
+        background-color: #009dd9;
+        span{
+          color: #fff;
+        }
+      }
+    }
+  }
+}
+
+// 输入框
+.el-input{
+  width: 100%;
+  .el-input__inner{
+    height: 36px;
+    border-radius: 0;
+    border-color: #dedede;
+  }
+}
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+}
+input[type="number"]{
+    -moz-appearance: textfield;
+}
+
+//checkbox
+.el-checkbox{
+  color: #333;
+  .el-checkbox__input{
+    .el-checkbox__inner{
+      border-color: #999;
+    }
+  }
+}
+
+//单选
+.el-radio{
+  .el-radio__inner{
+    border: 1px solid #666;
+  }
+}
+
+//el-form
+.el-form{
+  color: #333;
+  .el-form-item{
+    margin-bottom: 12px;
+    height: 40px;
+    .el-form-item__label{
+      font-weight: normal;
+    }
+    .el-form-item__content{
+      line-height: 36px;
+      height: 36px;
+    }
+  }
+
+  //时间一个框
+  .content-search-date{
+    .el-date-editor{
+      width: 250px;
+      margin: 0;
+      .el-range-input{
+        width: 100px;
+      }
+    }
+  }
+  //时间两个框
+  .content-search-date2{
+    .el-form-item__content{
+      .el-input,
+      .el-input__inner{
+        width: 128px;
+      }
+      .item-font{
+        color: #dedede;
+      }
+      .el-input--prefix .el-input__inner {
+        padding-left: 30px;
+      }
+      .el-input--suffix .el-input__inner {
+        padding-right: 10px;
+      }
+    }
+  }
+  //折扣及重量
+  .content-search-box{
+    .el-input{
+        width: 58px;
+        margin-right: 0;
+    }
+    .line{
+        width: 30px;
+        text-align: center;
+        display: inline-block;
+        color: #cccccc;
+    }
+  }
+  //重置
+  .content-search-reset{
+    .el-button{
+      background-color: #fff;
+      color: #2387f7;
+      border: 1px solid #2387f7;
+      margin-left: 0px;
+    }
+  }
+  //设置模板及导出
+  .content-search-setTemplate,
+  .content-search-export{
+    .el-button{
+      background-color: #f4f9ff;
+      color: #2387f7;
+      border: 1px solid #62acff;
+      margin-left: 0px;
+    }
+    .el-dropdown__caret-button{
+      padding: 0 5px;
+    }
+  }
+
+  //form-btn
+  .search-btn{
+    width: 88px;
+    height: 36px;
+    background-color: #009dd9;
+    border-radius: 3px;
+    padding: 0;
+    border: 0;
+    color: #fff;
+    font-size: 16px;
+    display: inline-block;
+    text-align: center;
+    cursor: pointer;
+    &:hover{
+      opacity: 0.8;
+    }
+  }
+  .clear-btn{
+    width: 88px;
+    height: 36px;
+    background-color: #e0e0e0;
+    border-radius: 3px;
+    padding: 0;
+    border: 0;
+    color: #666;
+    font-size: 16px;
+    display: inline-block;
+    text-align: center;
+    cursor: pointer;
+    &:hover{
+      opacity: 0.8;
+    }
+  }
+}
+
+//form icon 位置调试
+.redefined-search-input .el-input__inner {
+  height: 36px;
+}
+.redefined-search-input .el-input__suffix .el-input__icon {
+  line-height: 36px;
+}
+.redefined-search-input .el-input__prefix .el-input__icon {
+  line-height: 36px;
+}
+.redefined-search-input .el-date-editor .el-range__close-icon {
+  font-size: 14px;
+  color: #c0c4cc;
+  width: 25px;
+  display: inline-block;
+  float: right;
+  line-height: 28px;
+}
+.redefined-search-input .el-range-editor.el-input__inner {
+  padding: 0 10px;
+}
+
+//面包屑
+.breadcrumb-wrap{
+  margin-top: 10px;
+  width: 100%;
+  background-color: #fff;
+  .w{
+    height: 40px;
+    display: flex;
+    align-items: center;
+  }
+}
